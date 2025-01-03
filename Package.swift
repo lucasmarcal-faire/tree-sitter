@@ -14,12 +14,18 @@ let package = Package(
     targets: [
         .target(name: "TreeSitter",
                 path: "lib",
-                sources: ["src/lib.c"],
+                exclude: [
+                  "src/wasm",
+                  "src/lib.c",
+                  ],
+                sources: [
+                  "src"
+                ],
+                publicHeadersPath: "include",
                 cSettings: [
-                        .headerSearchPath("src"),
-                        .define("_POSIX_C_SOURCE", to: "200112L"),
-                        .define("_DEFAULT_SOURCE"),
-                ]),
+                  .define("_POSIX_C_SOURCE", to: "200112L", .when(platforms: [.linux, .android, .wasi, .windows, .openbsd])),
+                ])
     ],
     cLanguageStandard: .c11
 )
+                        
