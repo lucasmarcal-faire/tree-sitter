@@ -17,10 +17,8 @@ let package = Package(
                 exclude: [
                   "src/wasm",
                   "src/lib.c",
-                  ],
-                sources: [
-                  "src"
                 ],
+                sources: ["src"],
                 publicHeadersPath: "include",
                 cSettings: [
                   .define("_POSIX_C_SOURCE", to: "200112L"),
