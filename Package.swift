@@ -23,7 +23,7 @@ let package = Package(
                 ],
                 publicHeadersPath: "include",
                 cSettings: [
-                  .define("_POSIX_C_SOURCE", to: "200112L", .when(platforms: [.linux, .android, .wasi, .windows, .openbsd])),
+                  .define("_POSIX_C_SOURCE", to: "200112L"),
                 ])
     ],
     cLanguageStandard: .c11
