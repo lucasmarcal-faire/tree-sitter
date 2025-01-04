@@ -16,6 +16,9 @@ let package = Package(
                 path: "lib",
                 exclude: [
                   "src/wasm",
+                  "src/unicode/ICU_SHA",
+                  "src/unicode/README.md",
+                  "src/unicode/LICENSE",
                   "src/lib.c",
                 ],
                 sources: ["src"],
