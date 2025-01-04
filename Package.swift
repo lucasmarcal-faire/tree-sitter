@@ -21,6 +21,7 @@ let package = Package(
                 sources: ["src"],
                 publicHeadersPath: "include",
                 cSettings: [
+                  .headerSearchPath("src"),
                   .define("_POSIX_C_SOURCE", to: "200112L"),
                   .define("_DEFAULT_SOURCE"),
                 ])
